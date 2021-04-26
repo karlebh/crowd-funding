@@ -1,12 +1,7 @@
 <template>
 	<div>
-		<!-- Trigger/Open The Modal -->
-		<button id="myBtn">Open Modal</button>
-
-		<!-- The Modal -->
 		<div id="myModal" class="modal">
 
-			<!-- Modal content -->
 			<div class="modal-content w-3/5 text-justify">
 				<span class="close text-4xl hover:text-gray-800">&times;</span>
 				<div class="h-auto bg-white rounded-lg px-20 flex gap-5 justify-center flex-col">
@@ -134,7 +129,7 @@
 <style>
 
 	/* Add Animation */
-	@keyframes animatetop {
+	@keyframes animateTop {
 	  from {top: -300px; opacity: 0}
 	  to {top: 0; opacity: 1}
 	}
@@ -151,6 +146,7 @@
 		overflow: auto; /* Enable scroll if needed */
 		background-color: rgb(0,0,0); /* Fallback color */
 		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		animation: animateTop .5s ease;
 	}
 
 	/* Modal Content/Box */

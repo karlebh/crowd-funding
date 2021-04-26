@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @closeMenu="alert('kkk')" />
     <Section />
     <Footer />
   </div>
