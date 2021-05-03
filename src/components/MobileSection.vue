@@ -10,10 +10,10 @@
 				<h1 class="text-gray-500">A beautiful & handcrafted monitor stand to reduce neck and eye strain</h1>
 
 				<div class="flex justify-around mt-7">
-					<button style="background-color: teal;" id="myModal" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 text-white rounded-xl font-semibold">Back this project</button>
+					<button @click="isOpen = !isOpen" style="background-color: teal;" id="myModal" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 text-white rounded-full font-semibold">Back this project</button>
 
 					<!-- Modal -->
-					<modal-selected />
+					<modal-selected v-if="isOpen" isOpen="isOpen" @closeModal="isOpen = ! isOpen" />
 					<!-- Modal -->
 
 					<div class="flex flex-row-reverse justify-around">
@@ -50,7 +50,7 @@
 						<p>
 							<span class="font-bold text-3xl">101</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-xl">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -65,7 +65,7 @@
 						<p>
 							<span class="font-bold text-3xl mr-1">64</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-xl">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -80,7 +80,8 @@
 						<p>
 							<span class="font-bold text-3xl">0</span><span class="text-gray-500">left</span>
 						</p>
-						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-xl">Select Reward</button>
+						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" 
+						@click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 			</div>
@@ -90,16 +91,28 @@
 
 <script>
 	import ModalSelected from '@/components/ModalSelected'
+	import Thanks from '@/components/Thanks'
 
 	export default {
+		data() {
+			return {
+				isOpen: false,
+				isThanksOpen: false,
+			}
+		},
+		methods: {
+
+
+		},
 		components: {
 			ModalSelected,
+			Thanks,
 		}
 	}
 </script>
 
 <style>
-	.rounded-xl {
+	.rounded-full {
 		border-radius: 38px;
 	}
 

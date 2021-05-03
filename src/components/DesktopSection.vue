@@ -1,5 +1,6 @@
 <template>
 	<section class="bg-gray-100">
+		<thanks v-show="isThanksOpen" />
 		<div class="hidden lg:flex flex-col w-3/5 mx-auto h-auto">
 			<div class="relative -top-20 h-64 bg-white rounded-lg px-20 text-center -mb-10">
 				<div class="flex justify-center items-center align-middle">
@@ -10,15 +11,17 @@
 				<h1 class="text-gray-500">A beautiful & handcrafted monitor stand to reduce neck and eye strain</h1>
 
 				<div class="flex justify-between mt-7">
-					<button style="background-color: teal;" id="myBtn" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 text-white rounded-xl font-semibold">Back this project</button>
+					<button @click="isOpen = !isOpen" style="background-color: teal;" id="myBtn" class="focus:outline-none outline-none focus:shadow-outline hover:shadow-outline px-7 text-white rounded-full font-semibold">Back this project</button>
 
 					<!-- Modal -->
-					<modal-selected />
+					
+					<modal-selected-desktop v-if="isOpen" isOpen="isOpen" @closeModal="isOpen = ! isOpen" />
+
 					<!-- Modal -->
 
 					<div class="flex flex-row-reverse">
-						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline text-md text-gray-800 font-semibold bg-gray-200 px-10 rounded-xl">Bookmark</button>
-						<svg class="-mr-4" width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
+						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline text-md text-gray-800 font-semibold bg-gray-200 px-10 rounded-full">Bookmark</button>
+						<svg class="-mr-6" width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
 					</div>
 				</div>
 			</div>
@@ -50,7 +53,7 @@
 						<p>
 							<span class="font-bold text-3xl">101</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-xl">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -65,7 +68,7 @@
 						<p>
 							<span class="font-bold text-3xl mr-1">64</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-xl">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -80,7 +83,7 @@
 						<p>
 							<span class="font-bold text-3xl">0</span><span class="text-gray-500">left</span>
 						</p>
-						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-xl">Select Reward</button>
+						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 			</div>
@@ -89,20 +92,25 @@
 </template>
 
 <script>
-	import ModalSelected from '@/components/ModalSelected'
+	import ModalSelectedDesktop from '@/components/ModalSelectedDesktop'
+	import Thanks from '@/components/Thanks'
 
 	export default {
+		data() {
+			return {
+				isOpen: false,
+				isThanksOpen: false,
+			}
+		},
+
 		components: {
-			ModalSelected,
+			ModalSelectedDesktop,
+			Thanks,
 		}
 	}
 </script>
 
 <style>
-	.rounded-xl {
-		border-radius: 28px;
-	}
-
 	.bg-teal-dark {
 		background-color: hsl(176, 72%, 28%);
 	}

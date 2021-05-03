@@ -1,126 +1,138 @@
 <template>
-	<div>
-		<div id="myModal" class="modal">
+	<div id="modal" class="lg:hidden fixed overflow-y-auto gray-bg z-30 right-0 left-0 top-0 bottom-0 h-full w-full px-5 pt-32">
+		<div class="bg-white py-10 px-8 rounded-xl">
+			<!-- Back this project -->
+			<div class="flex justify-between items-center pb-3">
+				<h1 class="text-2xl font-bold">Back This Project</h1>
+				<span class="text-6xl text-gray-500 cursor-pointer mr-4" @click="closeModal" >&times;</span>
+			</div>
 
-			<div class="modal-content w-3/5 text-justify">
-				<span class="close text-4xl hover:text-gray-800">&times;</span>
-				<div class="h-auto bg-white rounded-lg px-20 flex gap-5 justify-center flex-col">
-					<div class="my-10">
-						<h1 class="text-xl font-semibold mb-5 float-left">Back this project</h1>
-						<p></p>
+			<p class="mb-7 text-gray-500">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+
+			<!-- Pledge with no reward -->
+			<div @click="pledge1 = true" class="focus:boreder-red-500 border border-gray-400 rounded-md p-4 my-8 bg-white text-left">
+				<label>
+					<div class="mb-5">
+						<input type="radio" name="plan" class="mx-5" />
+						<h1 class="font-bold text-xl inline mr-3">Pledge with no reward</h1> <br>
 					</div>
 
-					<div class="border border-gray-400 rounded p-4">
-						<label class="flex items-baseline">
-							<input type="radio" name="plans" class="mx-5 "  />
-							<div>
-								<div class="flex justify-between mb-5">
-									<h1 class="font-bold text-xl">Pledge with no reward</h1>
-									<!-- <h1 class="font-bold text-teal-dark">Pledge $125 or more.</h1> -->
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure est tempora nihil perferendis accusantium nesciunt deleniti, libero voluptates eos repudiandae et repellendus sunt id odio veritatis tempore eligendi fugit! Lorem ipsum dolor sit amet.
-								</p>
-							</div>
-						</label>
+					<div class="px-2">
+						<p class="px-4 text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque sunt dicta quidem dolores tenetur facere, saepe laborum, beatae ab, voluptate consequuntur soluta minima recusandae sequi nesciunt. Eveniet aliquid, debitis.</p>
 					</div>
-					
+
 					<!--  -->
-					<div class="border border-gray-400 rounded p-4">
-						<label class="flex items-baseline">
-							<input type="radio" name="plans" class="mx-5" />
-							<div>
-								<div class="flex justify-between mb-5">
-									<div class="">
-										<h1 class="font-bold text-xl inline mr-3">Bamboo Stand</h1>
-										<h1 class="font-bold text-teal-dark inline">Pledge $125 or more.</h1>
-									</div>
-									<p><span class="font-bold text-3xl mr-2">101</span><span class="text-gray-500">left</span></p>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque sunt dicta quidem dolores tenetur facere, saepe laborum, beatae ab, voluptate consequuntur soluta minima recusandae sequi nesciunt. Eveniet aliquid, debitis.</p>
+					<div v-show="pledge1" class="mt-3">
+					<hr>
+						<p class="text-center my-5 text-gray-500 text-gray-500">Enter your Pledge</p>
+						<div class="flex justify-around">
+							<button class="outline-none focus:outline-none rounded-full px-4 py-2 border border-gray-400">
+								<span class="px-2 text-gray-400">$</span> 
+								<input type="number" min="1" placeholder="1" class="w-20 text-center p-2 outline-none font-bold"  />
+							</button>
 
-								<hr class="my-5">
-
-								<div class="flex justify-between mb-5">
-									<input type="text" placeholder="Enter your pledge" class="bg-white border-0 shadow-none p-2 ">
-
-									<div>
-										<button class="mr-2 focus:outline-none focus:shadow-outline hover:shadow-outline px-5 py-3 font-semibold text-teal-dark border border-gray-400 rounded-xl">$ 25 <span class="border-r-2 border-gray-400 ml-2"></span></button>
-										<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-xl">Continue</button>
-									</div>
-								</div>
-							</div>
-						</label>
+							<button style="background-color: teal;" class="outline-none focus:outline-none rounded-full px-10 py-2 text-white text-xl font-semibold">Continue</button>
+						</div>
 					</div>
-					
+				</label>
+			</div>
+
+			<!-- Bamboo Stand -->
+			<div class="border border-gray-400 rounded-md p-4 my-8 bg-white text-left">
+				<label  @click="pledge2 =! false">
+					<div class="mb-5">
+						<input type="radio" name="plan" class="mx-5" />
+						<h1 class="font-bold text-xl inline mr-3">BambooStand</h1> <br>
+						<h1 class="font-bold text-teal-dark inline ml-14">Pledge $125 or more.</h1>
+					</div>
+
+					<div class="px-2 text-gray-500">
+						<p class="px-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque sunt dicta quidem dolores tenetur facere, saepe laborum, beatae ab, voluptate consequuntur soluta minima recusandae sequi nesciunt. Eveniet aliquid, debitis.</p>
+						<p><span class="font-bold text-3xl px-4">101</span><span class="text-gray-500">left</span></p>
+					</div>
+
 					<!--  -->
-					<div class="border border-gray-400 rounded p-4">
-						<label class="flex items-baseline">
-							<input type="radio" name="plan" class="mx-5" />
-							<div>
-								<div class="flex justify-between mb-5">
-									<div class="">
-										<h1 class="font-bold text-xl inline mr-3">Black Edition Stand</h1>
-										<h1 class="font-bold text-teal-dark inline">Pledge $75 or more.</h1>
-									</div>
-									<p><span class="font-bold text-3xl mr-2">64</span><span class="text-gray-500">left</span></p>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque sunt dicta quidem dolores tenetur facere, saepe laborum, beatae ab, voluptate consequuntur soluta minima recusandae sequi nesciunt. Eveniet aliquid, debitis.</p>
-							</div>
-						</label>
+					<div v-show="pledge2" class="mt-3">
+					<hr>
+						<p class="text-center my-5 text-gray-500">Enter your Pledge</p>
+						<div class="flex justify-around">
+							<button class="outline-none focus:outline-none rounded-full px-4 py-2 border border-gray-400">
+								<span class="px-2 text-gray-400">$</span> 
+								<input type="number" min="125" placeholder="125" class="w-20 text-center p-2 outline-none font-bold"  /></button>
+							<button style="background-color: teal;" class="outline-none focus:outline-none rounded-full px-10 py-2 text-white text-xl font-semibold">Continue</button>
+						</div>
+					</div>
+				</label>
+			</div>
+
+			<!-- Black Edition -->
+			<div @click="pledge3 = true" class="border border-gray-400 rounded-md p-4 my-8 bg-white text-left">
+				<label>
+					<div class="mb-5">
+						<input type="radio" name="plan" class="mx-5" />
+						<h1 class="font-bold text-xl inline mr-3">Black Edition Stand</h1> <br>
+						<h1 class="font-bold text-teal-dark inline ml-14">Pledge $75 or more.</h1>
 					</div>
 
+					<div class="px-2 text-gray-500">
+						<p class="px-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque sunt dicta quidem dolores tenetur facere, saepe laborum, beatae ab, voluptate consequuntur soluta minima recusandae sequi nesciunt. Eveniet aliquid, debitis.</p>
+						<p><span class="font-bold text-3xl px-4">64</span><span class="text-gray-500">left</span></p>
+					</div>
 
-					<div class="border border-gray-400 rounded p-4 mb-48 opacity-50">
-						<label class="flex items-baseline">
+					<!--  -->
+					<div v-show="pledge3" class="mt-3">
+					<hr>
+						<p class="text-center my-5 text-gray-500">Enter your Pledge</p>
+						<div class="flex justify-around">
+							<button class="outline-none focus:outline-none rounded-full px-4 py-2 border border-gray-400">
+								<span class="px-2 text-gray-400">$</span> 
+								<input type="number" min="75" placeholder="75" class="w-20 text-center p-2 outline-none font-bold"  /></button>
+							<button style="background-color: teal;" class="outline-none focus:outline-none rounded-full px-10 py-2 text-white text-xl font-semibold">Continue</button>
+						</div>
+					</div>
+				</label>
+			</div>
+
+			<!-- Mohogany -->
+			<div>
+				<div class="border border-gray-400 rounded-md p-4 mb-48 bg-white text-left opacity-25">
+					<!-- <label> -->
+						<div class="mb-5">
 							<input type="radio" name="plan" class="mx-5" />
-							<div>
-								<div class="flex justify-between mb-5">
-									<div>
-										<h1 class="font-bold text-xl inline mr-3">Mahogany Special Stand</h1>
-										<h1 class="font-bold text-teal-dark inline">Pledge $200 or more.</h1>
-									</div>
+							<h1 class="font-bold text-xl inline mr-3">Mahogany Special Stand</h1><br>
+							<h1 class="font-bold text-teal-dark inline ml-14">Pledge $200 or more.</h1>
+						</div>
 
-									<p><span class="font-bold text-3xl">0</span><span class="text-gray-500">left</span></p>
-								</div>
+						<div class="px-2">
+							<p class="px-4">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure est tempora nihil perferendis accusantium nesciunt deleniti.
-							</div>
-						</label>
-					</div>
+							</p>
+							<p><span class="font-bold text-3xl px-4">0</span><span class="text-gray-500">left</span></p>
+						</div>
+					<!-- </label> -->
+					
 				</div>
-				<!-- Modal Content Ends here -->
-			</div>  
-
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-		mounted() {
-			this.modal()
+		props: ['isOpen'],
+
+		data() {
+			return {
+				pledge1: false,
+				pledge2: false,
+				pledge3: false,
+			}
 		},
 
 		methods: {
-			modal() {
-				const modal = document.getElementById('myModal');
-				const btn = document.getElementById("myBtn");
-				const span = document.getElementsByClassName("close")[0];
-
-				btn.onclick = function() {
-					modal.style.display = "block";
-				}
-
-				span.onclick = function() {
-					modal.style.display = "none";
-				}
-
-				window.onclick = function(event) {
-					if (event.target == modal) {
-						modal.style.display = "none";
-					}
-				}
-			}
+			closeModal() {
+				this.$emit('closeModal')
+			},
 		}
 	}
 	
@@ -128,48 +140,4 @@
 
 <style>
 
-	/* Add Animation */
-	@keyframes animateTop {
-	  from {top: -300px; opacity: 0}
-	  to {top: 0; opacity: 1}
-	}
-
-	/* The Modal (background) */
-	.modal {
-		display: none; /* Hidden by default */
-		position: fixed; /* Stay in place */
-		z-index: 1; /* Sit on top */
-		left: 0;
-		top: 0;
-		width: 100%; /* Full width */
-		height: 100%; /* Full height */
-		overflow: auto; /* Enable scroll if needed */
-		background-color: rgb(0,0,0); /* Fallback color */
-		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-		animation: animateTop .5s ease;
-	}
-
-	/* Modal Content/Box */
-	.modal-content {
-		background-color: #fefefe;
-		margin: 15% auto; /* 15% from the top and centered */
-		padding: 20px;
-		border: 1px solid #888;
-		width: 80%; /* Could be more or less, depending on screen size */
-	}
-
-	/* The Close Button */
-	.close {
-		color: #aaa;
-		float: right;
-		font-size: 28px;
-		font-weight: bold;
-	}
-
-	.close:hover,
-	.close:focus {
-		color: black;
-		text-decoration: none;
-		cursor: pointer;
-	}
 </style>
