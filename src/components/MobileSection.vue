@@ -55,7 +55,7 @@
 						<p>
 							<span class="font-bold text-3xl">101</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -70,7 +70,7 @@
 						<p>
 							<span class="font-bold text-3xl mr-1">64</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -85,8 +85,7 @@
 						<p>
 							<span class="font-bold text-3xl">0</span><span class="text-gray-500">left</span>
 						</p>
-						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" 
-						@click="isThanksOpen = !isThanksOpen">Select Reward</button>
+						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" >Select Reward</button>
 					</div>
 				</div>
 			</div>
