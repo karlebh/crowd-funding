@@ -15,7 +15,7 @@
 				<h1 class="text-gray-500">A beautiful & handcrafted monitor stand to reduce neck and eye strain</h1>
 
 				<div class="flex justify-around mt-7">
-					<button @click="isOpen = !isOpen" style="background-color: teal;" id="myModal" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-7 text-white rounded-full font-semibold">Back this project</button>
+					<button @click="isOpen = !isOpen" style="background-color: teal;" id="myModal" class="focus:outline-none focus:shadow-outline hover:shadow-outline px-3 py-1 text-white rounded-full font-semibold">Back this project</button>
 
 					<!-- Modal -->
 					<modal-selected v-if="isOpen" isOpen="isOpen" @closeModal="isOpen = ! isOpen" />
@@ -55,7 +55,7 @@
 						<p>
 							<span class="font-bold text-3xl">101</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-3 py-2 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -68,9 +68,9 @@
 
 					<div class="flex justify-between mb-5 items-baseline mt-10">
 						<p>
-							<span class="font-bold text-3xl mr-1">64</span><span class="text-gray-500">left</span>
+							<span class="font-bold text-3xl">64</span><span class="text-gray-500">left</span>
 						</p>
-						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
+						<button style="background-color: teal;" class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-3 py-2 font-semibold text-white rounded-full" @click="isThanksOpen = !isThanksOpen">Select Reward</button>
 					</div>
 				</div>
 
@@ -85,7 +85,7 @@
 						<p>
 							<span class="font-bold text-3xl">0</span><span class="text-gray-500">left</span>
 						</p>
-						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-7 py-3 font-semibold text-white rounded-full" >Select Reward</button>
+						<button class="focus:outline-none focus:shadow-outline hover:shadow-outline bg-gray-400 px-3 py-2 font-semibold text-white rounded-full" >Select Reward</button>
 					</div>
 				</div>
 			</div>
