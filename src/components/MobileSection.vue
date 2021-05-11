@@ -1,5 +1,10 @@
 <template>
 	<section class="bg-gray-100">
+
+		<thanks v-show="isThanksOpen" 
+		isThanksOpen="isThanksOpen" 
+		@closeModal="isThanksOpen = ! isThanksOpen" />
+
 		<div style="width: 90%;" class="flex lg:hidden flex-col mx-auto h-auto">
 			<div class="relative -top-20 h-auto pb-10 bg-white rounded-lg px-10 text-center -mb-10">
 				<div class="flex justify-center items-center align-middle">
@@ -46,7 +51,7 @@
 					</div>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure est tempora nihil perferendis accusantium nesciunt deleniti, libero voluptates eos repudiandae et repellendus sunt id odio veritatis tempore eligendi fugit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum excepturi modi odit nostrum id vitae, velit dolorem non sunt quod eum accusamus odio consectetur rem eligendi tempore natus, quis nesciunt, quisquam asperiores qui doloremque et repudiandae. Iusto tempore deserunt voluptates animi illum laudantium, voluptatum quidem culpa, aspernatur impedit eius sequi.
 
-					<div class="flex justify-between mb-5">
+					<div class="flex justify-between mb-5 items-baseline mt-10">
 						<p>
 							<span class="font-bold text-3xl">101</span><span class="text-gray-500">left</span>
 						</p>
@@ -61,7 +66,7 @@
 					</div>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure est tempora nihil perferendis accusantium nesciunt deleniti, libero voluptates eos repudiandae et repellendus sunt id odio veritatis tempore eligendi fugit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum excepturi modi odit nostrum id vitae, velit dolorem non sunt quod eum accusamus odio consectetur rem eligendi tempore natus, quis nesciunt, quisquam asperiores qui doloremque et repudiandae. Iusto tempore deserunt voluptates animi illum laudantium, voluptatum quidem culpa, aspernatur impedit eius sequi.
 
-					<div class="flex justify-between mb-5">
+					<div class="flex justify-between mb-5 items-baseline mt-10">
 						<p>
 							<span class="font-bold text-3xl mr-1">64</span><span class="text-gray-500">left</span>
 						</p>
@@ -76,7 +81,7 @@
 					</div>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iure est tempora nihil perferendis accusantium nesciunt deleniti, libero voluptates eos repudiandae et repellendus sunt id odio veritatis tempore eligendi fugit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum excepturi modi odit nostrum id vitae, velit dolorem non sunt quod eum accusamus odio consectetur rem eligendi tempore natus, quis nesciunt, quisquam asperiores qui doloremque et repudiandae. Iusto tempore deserunt voluptates animi illum laudantium, voluptatum quidem culpa, aspernatur impedit eius sequi.
 
-					<div class="flex justify-between mb-5">
+					<div class="flex justify-between mb-5 mt-10 items-baseline">
 						<p>
 							<span class="font-bold text-3xl">0</span><span class="text-gray-500">left</span>
 						</p>
@@ -99,10 +104,6 @@
 				isOpen: false,
 				isThanksOpen: false,
 			}
-		},
-		methods: {
-
-
 		},
 		components: {
 			ModalSelected,

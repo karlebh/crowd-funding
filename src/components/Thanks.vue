@@ -1,5 +1,5 @@
 <template>
-	<div class="modal z-40 fixed w-full h-full gray-bg inset-0 flex justify-center items-center">
+	<div class="Modal z-40 fixed w-full h-full gray-bg inset-0 flex justify-center items-center">
 		<div class="flex flex-col items-center justify-center bg-white w-72 sm:w-96 h-96 px-4 rounded-lg mx-auto">
 			<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
 				<g fill="none" fill-rule="evenodd"><circle fill="#3CB3AB" cx="32" cy="32" r="32"/>
@@ -19,25 +19,19 @@
 			
 			<br>
 
-			<button class="closeModal outline-none focus:shadow-outline rounded-full bg-teal-dark py-4 px-8 font-semibold text-white outline-none focus:outline-none">Got it!</button>
+			<button @click="closeThanks" class="closeModal outline-none focus:shadow-outline rounded-full bg-teal-dark py-4 px-8 font-semibold text-white outline-none focus:outline-none">Got it!</button>
 		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-		mounted() {
-			document.querySelector('.closeModal')
-			.addEventListener('click', () => {
-				document.querySelector('.modal').style.display = "none"
-			})
-
-			const modal = document.querySelector('.modal')
-			window.addEventListener('click', function(event) {
-			  if (event.target == modal) {
-			    modal.style.display = "none";
-			  }
-			})
+		props: ['isThanksOpen'],
+		methods: {
+			closeThanks() {
+				this.isThanksOpen = !this.isThanksOpen
+				this.$emit('closeModal')
+			}
 		}
 	}
 </script>
